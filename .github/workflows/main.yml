@@ -24,7 +24,6 @@ jobs:
         cd front
         npm install
         npm install puppeteer --save-dev
-        set -e
         NG_CLI_ANALYTICS=false npm test
 
     - name: Set up Maven
