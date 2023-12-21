@@ -23,7 +23,7 @@ jobs:
       run: |
         cd front
         npm install
-        npm test
+        NG_CLI_ANALYTICS=false npm test
 
     - name: Set up Maven
       uses: actions/setup-java@v2
