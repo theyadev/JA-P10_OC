@@ -24,13 +24,14 @@ jobs:
         cd front
         npm install
         npm install puppeteer --save-dev
+        set -e
         NG_CLI_ANALYTICS=false npm test
 
     - name: Set up Maven
       uses: actions/setup-java@v2
       with:
         distribution: 'adopt'
-        java-version: '11'
+        java-version: '18'
 
     - name: Install dependencies and run back-end tests
       run: |
