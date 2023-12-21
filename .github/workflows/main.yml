@@ -60,10 +60,12 @@ jobs:
       run: |
         cd front
         docker build -t bobapp-front .
+        echo ${{ secrets.DOCKER_PASSWORD }} | docker login -u ${{ secrets.DOCKER_USERNAME }} --password-stdin
         docker push bobapp-front
 
     - name: Build and push back-end Docker image
       run: |
         cd back
         docker build -t bobapp-back .
+        echo ${{ secrets.DOCKER_PASSWORD }} | docker login -u ${{ secrets.DOCKER_USERNAME }} --password-stdin
         docker push bobapp-back
