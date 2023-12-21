@@ -27,6 +27,12 @@ jobs:
         npm install puppeteer --save-dev
         NG_CLI_ANALYTICS=false npm test
 
+    - name: Archive code coverage reports
+      uses: actions/upload-artifact@v2
+      with:
+        name: code-coverage
+        path: front/coverage
+
     - name: Set up Maven
       uses: actions/setup-java@v2
       with:
